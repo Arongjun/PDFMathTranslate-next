@@ -1660,7 +1660,7 @@ tech_details_string = f"""
 update_current_languages(settings.gui_settings.ui_lang)
 # The following code creates the GUI
 with gr.Blocks(
-    title="阿荣文献翻译官 - PDF Translation with preserved formats",
+    title="文献翻译官|by Arong - PDF Translation with preserved formats",
     theme=gr.themes.Default(
         primary_hue=custom_blue, spacing_size="md", radius_size="lg"
     ),
@@ -1673,7 +1673,7 @@ with gr.Blocks(
         render=False,
     )
     with Translate(get_translation_dic(translation_file_path), lang_selector):
-        gr.Markdown("# [阿荣文献翻译官](https://wuenrong.com)")
+        gr.Markdown("# [文献翻译官|by Arong](https://wuenrong.com)")
 
         translation_engine_arg_inputs = []
         detail_text_inputs = []
@@ -1725,7 +1725,7 @@ with gr.Blocks(
 
                 siliconflow_free_acknowledgement = gr.Markdown(
                     _(
-                        "Free translation service provided by [SiliconFlow](https://siliconflow.cn)"
+                        "Deployed by [Arong](https://wuenrong.com)"
                     ),
                     visible=True,
                 )
@@ -2112,9 +2112,8 @@ with gr.Blocks(
                         ("No Watermark", "No Watermark"),
                     ],
                     label="Watermark mode",
-                    value="Watermarked"
-                    if settings.pdf.watermark_output_mode == "watermarked"
-                    else "No Watermark",
+                    value="No Watermark",
+                    visible=False,
                 )
 
                 # Additional translation options
