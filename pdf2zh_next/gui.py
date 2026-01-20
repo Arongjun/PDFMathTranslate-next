@@ -1649,9 +1649,6 @@ if not config_fake_pdf_path.exists():
 
 tech_details_string = f"""
                     <summary>Technical details</summary>
-                    - ⭐ Star at GitHub: <a href="https://github.com/PDFMathTranslate-next/PDFMathTranslate-next">PDFMathTranslate-next/PDFMathTranslate-next</a><br>
-                    - BabelDOC: <a href="https://github.com/funstory-ai/BabelDOC">funstory-ai/BabelDOC</a><br>
-                    - GUI by: <a href="https://github.com/reycn">Rongxin</a> & <a href="https://github.com/hellofinch">hellofinch</a> & <a href="https://github.com/awwaawwa">awwaawwa</a> & <a href="https://github.com/zfb132">zfb132</a><br>
                     - pdf2zh Version: {__version__} <br>
                     - BabelDOC Version: {babeldoc_version}<br>
                     - Free translation service provided by <a href="https://siliconflow.cn/" target="_blank" style="text-decoration: none;">SiliconFlow</a><br>
@@ -1663,7 +1660,7 @@ tech_details_string = f"""
 update_current_languages(settings.gui_settings.ui_lang)
 # The following code creates the GUI
 with gr.Blocks(
-    title="PDFMathTranslate - PDF Translation with preserved formats",
+    title="阿荣文献翻译官 - PDF Translation with preserved formats",
     theme=gr.themes.Default(
         primary_hue=custom_blue, spacing_size="md", radius_size="lg"
     ),
@@ -1676,7 +1673,7 @@ with gr.Blocks(
         render=False,
     )
     with Translate(get_translation_dic(translation_file_path), lang_selector):
-        gr.Markdown("# [PDFMathTranslate Next](https://pdf2zh-next.com)")
+        gr.Markdown("# [阿荣文献翻译官](https://wuenrong.com)")
 
         translation_engine_arg_inputs = []
         detail_text_inputs = []
